@@ -1,0 +1,264 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Matomo E-Commerce Tracking 1.0.2 für Zen Cart 1.5.7 deutsch</title>
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta http-equiv="content-language" content="de">
+<meta name="description" content="Matomo E-Commerce Tracking 1.0.2 für Zen Cart 1.5.7 deutsch">
+<link rel="stylesheet" type="text/css" href="includes/css/stylesheet.css">  
+<script type="text/javascript" src="includes/jscript/jscript_tabs.js"></script>
+</head>
+<body>
+<div id="wrapper">
+<div id="header">
+<h1>Matomo E-Commerce Tracking 1.0.2 für Zen Cart 1.5.7 deutsch</h1>
+</div>
+
+<div id="slidetabsmenu" style="display: none;">
+<ul>
+  <li> <a onClick="expandcontent('sc1', this)" href="javascript:void(0)"><span>Sinn und Zweck</span></a></li>
+  <li> <a onClick="expandcontent('sc2', this)" href="javascript:void(0)"><span>Installation</span></a></li>
+   <li> <a onClick="expandcontent('sc3', this)" href="javascript:void(0)"><span>Konfiguration</span></a></li>
+   <li> <a onClick="expandcontent('sc4', this)" href="javascript:void(0)"><span>Deinstallation</span></a></li>
+  <li> <a onClick="expandcontent('sc5', this)" href="javascript:void(0)"><span>Download & Support</span></a></li>
+  <li> <a onClick="expandcontent('sc6', this)" href="javascript:void(0)"><span>Unterstützen</span></a></li>
+ </ul>
+</div>
+<br style="clear: both;">
+
+<!--Begin tabcontainer-->
+<div id="tabcontentcontainer">
+
+<!--Begin sc1-->
+<div class="tabcontent" id="sc1" style="display: block;">
+<div class="textcontent">
+<div class="regularlist">
+
+<h2>Sinn und Zweck dieses Moduls</h2>
+
+  <p>Matomo (vormals Piwik) ist eine  ist eine weitverbreitete Open-Source-Webanalytik-Plattform und eine Alternative zu Google Analytics.<br>
+    Sie kann auf dem eigenen Server eingerichtet werden (Matomo On-Premise) und alle Trackingdaten bleiben auch dort.
+      <br>
+      Details und Download auf <a href="https://matomo.org/" target="_blank">https://matomo.org/ </a><br>
+    <br> 
+    Dieses Modul integriert den Matomo Tracking Code gemeinsam mit einem erweiterten E-Commerce Tracking in Ihrem Zen Cart Shop, so dass in Ihrer Matomo On-Premise Installation nicht nur Seitenaufrufe sondern auch Details zu den Verkäufen im Shop getrackt werden.
+</p>
+<h3>Copyright, Version, Changelog Lizenz</h3>
+<p>Copyright<br>
+(c) 2021-2022 webchills (<a href="https://www.webchills.at" target="_blank">www.webchills.at</a>)<br>
+<br>
+Version 1.0.2 - 14.02.2022<br>
+Anpassungen für Zen Cart 1.5.7 deutsch und PHP 8
+<br/><br/>
+Version 1.0.1 - 16.02.2021<br>
+Erfassung der Artikelnummer als SKU aktualisiert<br/>
+Integration von iFrameResizer um doppelte Scrollbar im Admin Report zu vermeiden
+<br/><br/>
+Version 1.0.0 - Februar 2021<br>
+Überarbeitung des alten piwikecommerce Moduls (2012) von Stephan Miller
+zur Verwendung in der aktuellen deutschen Zen Cart Version und aktuellen Matomo Version<br>
+<br>
+ Portions Copyright (c) 2003 osCommerce<br>
+  Portions Copyright     (c) 2003-2022 Zen Cart</p>
+<p>This contribution is subject to version 3.0 of the GPL license available through the world-wide-web at the following url:<br>
+  <a href="http://www.zen-cart-pro.at/license/3_0.txt">http://www.zen-cart-pro.at/license/3_0.txt</a></p>
+</div>
+</div>
+</div>
+<!--End sc1-->
+
+<!--Begin sc2-->
+<div class="tabcontent" id="sc2" style="display: block;">
+<div class="textcontent">
+<div class="regularlist">
+
+<h2>Installation</h2>
+<h3>Voraussetzungen</h3>
+  
+  <ul>
+    <li>Sie haben Ihre eigene Motomo On-Premise Installation auf Ihrem Server eingerichtet und fertig konfiguriert.</li>
+    <li>Sie verwenden für Matomo durchgehend https://</li>
+   
+    <li>Ihr Zen Cart Shop verwendet durchgehend https://</li>
+    <li>      Sie haben in Matomo für Ihren Zen Cart Shop eine Seite angelegt und für diese Seite Ecommerce aktiviert      </li>
+     <li>      Sie haben in Matomo einen zusätzlichen User ohne Adminrechte angelegt und für diesen User unter Administration &gt; Persönlich &gt; Sicherheit einen Authentifizierungtoken angelegt. Dieser User hat Leseberechtigung für die Shop ID</li>
+    <li>      Sie haben in Matomo ein Ziel angelegt, bei dem die URL checkout_success beinhaltet. </li>
+    </ul>
+  <p>Sollten Sie diese Schritte in Matomo noch nicht durchgeführt haben, machen Sie das jetzt, bevor Sie dieses Zen Cart Modul installieren.</p>
+
+      Dieses Modul ist<strong> nur für Zen Cart 1.5.7 deutsch geeignet</strong><br>
+      <br>
+      Für den Einbau dieses Moduls sollten Sie über folgende Werkzeuge verfügen:<br>
+      <br>
+      1) Ein guter Texteditor. <br>
+      Damit ist nicht das in Windows enthaltene Notepad oder Microsoft Word gemeint.<br>
+      Sie benötigen einen Texteditor, der utf-8 versteht und auch im Format utf-8 ohne BOM abspeichern kann.<br>
+      Meine Empfehlung: <a href="http://www.ultraedit.com/loc/de/index_de.html" target="_blank">UltraEdit</a> (kostenlose 30 Tage Testversion verfügbar)<br>
+      Ebenfalls gut geeignet ist der kostenlose Texteditor <a href="http://notepad-plus.sourceforge.net/de/site.htm" target="_blank">Notepad++ </a><br>
+    </li>
+  </ul>
+  <p>2) Ein Tool zum Vergleichen von Dateien<br>
+    Bei der Installation dieses Moduls ist es erforderlich, dass Sie den   Inhalt einiger Ihrer bestehenden Zen Cart Dateien mit dem Inhalt der   neuen Moduldateien vergleichen und die Änderungen zusammenführen   ("mergen").<br>
+    Meine Empfehlung: <a href="http://www.scootersoftware.com/" target="_blank">BeyondCompare</a> (kostenlose 30 Tage Testversion verfügbar)<br>
+    Ebenfalls gut geeignet ist das kostenlose Programm <a href="http://winmerge.org/" target="_blank">WinMerge </a></p>
+  <p><br>
+  <strong>Empfehlung:</strong><br>
+  <br>
+  Dieses Modul erst in einem Testsystem einbauen und dort   konfigurieren/testen und endgültig an die eigenen Wünsche anpassen.        Erst dann in einem Liveshop einsetzen! Sichern Sie unbedingt alle   Dateien Ihres Shops per FTP und sichern Sie die Datenbank mit phpMyAdmin   oder anderen geeigneten Tools!</p>
+<div id="warning"><b>WICHTIG</b><br>
+Vor dem Einbau dieser Änderungen:<br>
+BACKUP von Shop und Datenbank machen! <br>
+Keine Haftung, Verwendung auf eigene Gefahr!<br>
+BACKUP gemacht? Ok, dann weiterlesen...
+</div>
+<p>Die Installation erfolgt in folgenden Schritten. Halten Sie diesen Ablauf ein!</p>
+<p><strong>WICHTIG:<br>
+  Falls Sie in Ihrem Zen Cart Shop bereits den allgemeinen Matomo Tracking Code eingefügt haben, z.B. in includes/templates/DEINTEMPLATE/common/html_header.php oder in irgendeine andere Datei, dann entfernen Sie jetzt diesen Code.<br>
+  Dieses Modul integriert den Trackingcode mit erweiterten E-Commerce Funktionen, ein allgemeiner Tracking Code so wie in Ihrer Matomo Administration angezeigt ist NICHT erforderlich und doppelte Codes sind kontraproduktiv!</strong></p>
+<p>1) <br>
+Im Ordner NEUE DATEIEN alle Ordner namens DEINTEMPLATE auf das im Shop   verwendete Template umbennen (z.B.  responsive_classic). <br>
+Den   Ordner DEINADMIN auf den Namen Ihres admin Verzeichnisses   umbenennen.<br>
+<br>
+2)<br>
+In die Zen Cart Administration einloggen<br>
+<br>
+3)<br>
+Überprüfen Sie nun erst nochmal ob Sie wirklich in Schritt 1 die Ordner in NEUE DATEIEN entsprechend umbenannt haben.<br>
+Ja?<br>
+Dann nun alle Dateien/Ordner aus dem Ordner NEUE DATEIEN in der vorgegebenen Struktur in die Zen Cart Installation hochladen. <br>
+  Dabei werden keine bestehende Datei überschrieben.<br>
+  <br>
+  4)<br>
+  In der Zen Cart Administration auf irgendeinen Menüpunkt clicken. Sie sollten oben grüne Erfolgsmeldungen sehen und unter Konfiguration ist nun der neue Menüpunkt &quot;Matomo Konfiguration&quot; vorhanden.
+  <br>
+  <br>
+  5
+  )<br>
+Im Ordner GEAENDERTE DATEIEN alle Ordner namens DEINTEMPLATE auf das im Shop verwendete Template umbennen.<br>
+Falls Sie das responsive Standardtemplate responsive_classic aktiv haben, verwenden Sie stattdessen die Dateien im Ordner DEINTEMPLATE_RESPONSIVE.<br>
+Wenn Sie Zen Cart 1.5.7 gerade frisch installiert haben und noch   keinerlei Änderungen an den Dateien vorgenommen haben, können Sie nun  alle Dateien/Ordner aus dem Ordner GEAENDERTE DATEIEN in der   vorgegebenen Struktur in die Zen Cart Installation hochladen. Dabei   werden dann einige Dateien überschrieben.<br>
+Wenn Sie Zen Cart 1.5.7 schon länger im Einsatz haben und schon einmal   Änderungen an Dateien vorgenommen oder andere Module eingebaut haben,   dann laden Sie die Dateien keinesfalls einfach hoch. <br>
+Vergleichen Sie alle Dateien im Ordner GEAENDERTE DATEIEN mit den   entsprechenden Dateien in Ihrem Shop und nehmen Sie die Änderungen   manuell per WinMerge oder BeyondCompare vor.<br>
+Dann spielen Sie die geänderten Dateien in der gezeigten Struktur ein.<br>
+  <br>
+  6)<br>
+  Stellen Sie nun in der Zen Cart Administration unter Konfiguration &gt; Matomo Konfiguration so ein wie unter Konfiguration beschrieben.</p>
+<h3>&nbsp;</h3>
+  </div>
+</div>
+</div>
+
+<!--End sc2-->
+
+<!--Begin sc3-->
+<div class="tabcontent" id="sc3" style="display: block;">
+<div class="textcontent">
+<div class="regularlist">
+
+<h2>KONFIGURATION</h2>
+<p><b>Einstellungsmöglichkeiten in der Zen Cart Administration</b></p>
+<p> Unter Konfiguration &gt; Matomo Konfiguration sind folgende Optionen verfügbar:<br>
+  <strong><br>
+    Matomo URL</strong><br>
+  Geben Sie hier das Verzeichnis Ihrer Matomo Installation ein.<br>
+Lassen Sie dabei http:// oder https:// am Anfang weg!<br>
+Und lassen Sie auch einen Backslash / am Ende weg!<br>
+Läuft Ihre Matomo Installation z.B. unter https://www.meinedomain.de/matomo/<br>
+dann geben Sie exakt wie folgt an:<br>
+www.meinedomain.de/matomo<br>
+Läuft Ihre Matomo Installation z.B. unter https://matomo.meinedomain.de<br>
+dann geben Sie exakt wie folgt an:<br>
+matomo.meinedomain.de</p>
+<p><strong>Matomo Site ID</strong><br>
+  Geben Sie hier die ID der Website an, die Sie in Ihrer Matomo Administration für Ihren Shop angelegt haben</p>
+<p><strong>Matomo Report Zeitraum</strong><br>
+  Geben Sie hier den gewünschten Zeitraum für den Report an, der später in der Zen Cart Administration unter Statistiken &gt; Matomo Reports standardmäßig ersichtlich sein wird.<br>
+Optionen: Tag (day), Woche (week), Monat (month) oder Jahr (year)</p>
+<p><b>Matomo Report Datum<br>
+</b>Geben Sie hier den gewünschten Tag für den Report an, der später in der Zen Cart Administration unter Statistiken &gt; Matomo Reports standardmäßig ersichtlich sein wird.<br>
+  Optionen: Heute (today) oder Gestern (yesterday)</p>
+<p><b>Matomo Token</b><br> 
+  Geben Sie hier den Token ein, den Sie für den zusätzlichen Matomo User ohne Adminrechte angelegt haben.<br>
+  Dies ist erforderlich, damit das Matomo Dashboard unter Statistiken &gt; Matomo Reports eingeblendet werden kann.  </p>
+  <p>Stellen Sie alles wie gewünscht ein. Ab sofort werden die Trackinginformationen in Ihrem Matomo Dashboard erscheinen. Unter Statistiken > Matomo Reports wird Ihr Matomo Dashboard auch via Zen Cart Administration eingeblendet </p>
+</div>
+</div>
+</div>
+<!--End sc3-->
+
+<!--Begin sc4-->
+<div class="tabcontent" id="sc4" style="display: block;">
+<div class="textcontent">
+<div class="regularlist">
+
+<h2>DEINSTALLATION</h2>
+<p>1.<br>
+Alle von diesem Modul neu angelegten Dateien vom Server löschen.<br>
+Alle von diesem Modul geänderten Dateien wieder mit den Originalversionen bzw. den Dateien Ihres Backups ersetzen.</p>
+<p>2.<br>
+  Die Datei uninstall.sql im Ordner UNINSTALL mit einem Texteditor öffen und den Inhalt kopieren</p>
+<p>3.<br>
+  Zen Cart Administration öffnen und unter Tools &gt; SQL Patches installieren den Inhalt ins Feld hineinkopieren und absenden.</p>
+<p>&nbsp;</p>
+</div>
+</div>
+</div>
+<!--End sc4-->
+
+<!--Begin sc5-->
+<div class="tabcontent" id="sc5" style="display: block;">
+<div class="textcontent">
+<div class="regularlist">
+<h2>Download &amp; Support</h2>
+<p>Download des Moduls:</p>
+<p><a href="https://www.zen-cart-pro.at/forum/vbdownloads.php?categoryid=14" target="_blank">www.zen-cart-pro.at/forum/vbdownloads.php?categoryid=14</a></p>
+
+<p>Supportforum zum Modul:</p>
+<p><a href="https://www.zen-cart-pro.at/forum/forums/159-Matomo-%28ex-Piwik%29" target="_blank">www.zen-cart-pro.at/forum/forums/159-Matomo-%28ex-Piwik%29</a></p>
+</div>
+</div>
+</div>
+<!--End sc5-->
+
+<!--Begin sc6-->
+<div class="tabcontent" id="sc6" style="display: block;">
+<div class="textcontent">
+<div class="regularlist">
+
+<h2>Unterstützen</h2>
+<p>Sie finden dieses Modul nützlich?</p>
+<p>Unterstützen Sie die Weiterentwicklung der deutschen Zen Cart Version.<br/>Wir freuen uns über Spenden zur Finanzierung des Servers und der vBulletin-Lizenz: </p>
+<p><a href="https://donorbox.org/spende-fur-die-weiterentwicklung-der-deutschen-zen-cart-version" target="_blank"><img src="https://www.zen-cart-pro.at/zencartpro-donation-white.png" alt="Spende für die Weiterentwicklung der deutschen Zen Cart Version" title="Spende für die Weiterentwicklung der deutschen Zen Cart Version"></a></p>
+<br/><br/>
+<p>Du bist Entwickler und willst helfen, die deutsche Zen Cart Version noch besser zu machen?<br>
+  Beteilige Dich auf Github:<br>
+  <a href="https://github.com/zencartpro" target="_blank"><strong>https://github.com/zencartpro</strong></a></p>
+<br/><br/>
+</div>
+</div>
+</div>
+<!--End sc6-->
+</div>
+<div id="footer">
+Ein Modul von <a href="https://www.zen-cart-pro.at" target="_blank">www.zen-cart-pro.at</a> - Die deutsche Zen Cart Version
+</div>
+</div>
+<!--end tabcontainer-->
+<script type="text/javascript">document.getElementById('sc1').style.display = 'none';</script>
+<script type="text/javascript">document.getElementById('sc2').style.display = 'none';</script>
+<script type="text/javascript">document.getElementById('sc3').style.display = 'none';</script>
+<script type="text/javascript">document.getElementById('sc4').style.display = 'none';</script>
+<script type="text/javascript">document.getElementById('sc5').style.display = 'none';</script>
+<script type="text/javascript">document.getElementById('sc6').style.display = 'none';</script>
+<script type="text/javascript">ShowTabs()</script>
+<script type="text/javascript">
+// We only show the tab links if JavaScript is available/active.
+<!--
+if (document.getElementById("slidetabsmenu") != null) {
+  document.getElementById('slidetabsmenu').style.display = "block";
+}
+//-->
+</script>
+
+</body></html>

@@ -5,17 +5,17 @@
  * Loaded automatically by index.php?main_page=checkout_success.
  * Displays confirmation details after order has been successfully processed.
  *
- 
- * @copyright Copyright 2003-2022 Zen Cart Development Team
+ * 
+ * @copyright Copyright 2003-2023 Zen Cart Development Team
  * Zen Cart German Version - www.zen-cart-pro.at
  * @copyright Portions Copyright 2003 osCommerce
  * @license https://www.zen-cart-pro.at/license/3_0.txt GNU General Public License V3.0
- * @version $Id: tpl_checkout_success_default.php for Matomo 2022-12-17 19:34:16Z webchills $
+ * @version $Id: tpl_checkout_success_default.php for Matomo 2023-11-14 19:26:16Z webchills $
  */
 ?>
 <!-- bof Matomo with E-Commerce Tracking-->
 <?php
-$_SESSION['log_order'] = log_order($zv_orders_id,$orders,$notificationsArray,$_SESSION['languages_id']); 
+$_SESSION['log_order'] = log_order($zv_orders_id,$order_summary,$notificationsArray,$_SESSION['languages_id']); 
 ?>
 <!-- End Matomo with E-Commerce Tracking-->
 <div class="centerColumn" id="checkoutSuccess">

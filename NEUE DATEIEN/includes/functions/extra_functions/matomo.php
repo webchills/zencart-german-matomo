@@ -1,15 +1,14 @@
 <?php  
 /**
 * package Matomo
-* @copyright Copyright 2021-2022 webchills (www.webchills.at)
+* @copyright Copyright 2021-2023 webchills (www.webchills.at)
 * @based on piwikecommerce 2012 by Stephan Miller
-* @copyright Copyright 2003-2021 Zen Cart Development Team
+* @copyright Copyright 2003-2023 Zen Cart Development Team
 * Zen Cart German Version - www.zen-cart-pro.at
 * @copyright Portions Copyright 2003 osCommerce
 * @license https://www.zen-cart-pro.at/license/3_0.txt GNU General Public License V3.0
-* @version $Id: matomo.php 2022-02-14 16:51:40Z webchills $
+* @version $Id: matomo.php 2023-11-14 18:50:40Z webchills $
 */
-
 
 // checked OK
 function log_category($categories_id,$language_id = 0) {
@@ -54,7 +53,7 @@ return $string;
 } 
 
 function log_order($insert_id,$order,$matomoproducts,$language_id = 0) {
-global $db; 
+global $db,$order_summary;
 $string = isset($string) ? $string : '';     
 if ($language_id == 0) $language_id = $_SESSION['languages_id']; 
 foreach ($matomoproducts as $p) {
@@ -70,21 +69,21 @@ $string .= '_paq.push([\'addEcommerceItem\', \''.$matomo_order_product->fields['
 }
 }
 }
-$subtotal_result = $db->Execute("SELECT ROUND(value, 2) subtotal FROM ". TABLE_ORDERS_TOTAL ." WHERE class='ot_subtotal' AND orders_id = ". $order->fields['orders_id']);
+$subtotal_result = $db->Execute("SELECT ROUND(value, 2) subtotal FROM ". TABLE_ORDERS_TOTAL ." WHERE class='ot_subtotal' AND orders_id = ". $order_summary['order_number']);
 $subtotal = $subtotal_result->fields['subtotal'];
-$shipping_result = $db->Execute("SELECT ROUND(value, 2) shipping FROM ". TABLE_ORDERS_TOTAL ." WHERE class='ot_shipping' AND orders_id = ". $order->fields['orders_id']);
+$shipping_result = $db->Execute("SELECT ROUND(value, 2) shipping FROM ". TABLE_ORDERS_TOTAL ." WHERE class='ot_shipping' AND orders_id = ". $order_summary['order_number']);
 if ($shipping_result->RecordCount() > 0) {
 $shipping = $shipping_result->fields['shipping'];
 } else {
 $shipping = 0.00;
 }
-$discount_result = $db->Execute("SELECT ROUND(value, 2) discount FROM ". TABLE_ORDERS_TOTAL ." WHERE class='ot_coupon' AND orders_id = ". $order->fields['orders_id']);
+$discount_result = $db->Execute("SELECT ROUND(value, 2) discount FROM ". TABLE_ORDERS_TOTAL ." WHERE class='ot_coupon' AND orders_id = ". $order_summary['order_number']);
 if ($discount_result->RecordCount() > 0) {
 $discount = $discount_result->fields['discount'];
 } else {
 $discount = 0.00;
 }
-$string .= '_paq.push([\'trackEcommerceOrder\',\''.$insert_id.'\',\''.format_price($order->fields['order_total']).'\',\''.format_price($subtotal).'\',\''.format_price($order->fields['order_tax']).'\',\''.format_price($shipping).'\',\''.format_price($discount).'\']);' . "\n";
+$string .= '_paq.push([\'trackEcommerceOrder\',\''.$insert_id.'\',\''.format_price($order_summary['order_total']).'\',\''.format_price($subtotal).'\',\''.format_price($order_summary['tax']).'\',\''.format_price($shipping).'\',\''.format_price($discount).'\']);' . "\n";
 return $string;	
 } 
 

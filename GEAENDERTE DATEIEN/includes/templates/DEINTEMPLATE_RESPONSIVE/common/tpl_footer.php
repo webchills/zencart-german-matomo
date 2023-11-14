@@ -2,20 +2,19 @@
 /**
  * Common Template - tpl_footer.php
  *
- * this file can be copied to /templates/your_template_dir/pagename<br />
- * example: to override the privacy page<br />
- * make a directory /templates/my_template/privacy<br />
- * copy /templates/templates_defaults/common/tpl_footer.php to /templates/my_template/privacy/tpl_footer.php<br />
- * to override the global settings and turn off the footer un-comment the following line:<br />
- * <br />
- * $flag_disable_footer = true;<br />
- *
+ * this file can be copied to /templates/your_template_dir/pagename
+ * example: to override the privacy page
+ * make a directory /templates/my_template/privacy
+ * copy /templates/templates_defaults/common/tpl_footer.php to /templates/my_template/privacy/tpl_footer.php
+ * to override the global settings and turn off the footer un-comment the following line:
  * 
+ * $flag_disable_footer = true;
+ *
  * @copyright Copyright 2003-2022 Zen Cart Development Team
  * Zen Cart German Version - www.zen-cart-pro.at
  * @copyright Portions Copyright 2003 osCommerce
  * @license https://www.zen-cart-pro.at/license/3_0.txt GNU General Public License V3.0
- * @version $Id: tpl_footer.php for Matomo 2022-02-14 11:36:58Z webchills $
+ * @version $Id: tpl_footer.php for Matomo 2023-11-14 18:36:58Z webchills $
  */
 require(DIR_WS_MODULES . zen_get_module_directory('footer.php'));
 ?>

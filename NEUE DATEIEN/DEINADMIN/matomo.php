@@ -1,13 +1,13 @@
 <?php
 /**
  * @package Matomo
- * @copyright Copyright 2021-2022 webchills (www.webchills.at)
+ * @copyright Copyright 2021-2024 webchills (www.webchills.at)
  * @based on piwikecommerce 2012 by Stephan Miller
- * @copyright Copyright 2003-2022 Zen Cart Development Team
+ * @copyright Copyright 2003-2024 Zen Cart Development Team
  * Zen Cart German Version - www.zen-cart-pro.at
  * @copyright Portions Copyright 2003 osCommerce
  * @license https://www.zen-cart-pro.at/license/3_0.txt GNU General Public License V3.0
- * @version $Id: matomo.php 2022-02-14 11:11:40Z webchills $
+ * @version $Id: matomo.php 2024-03-20 15:11:40Z webchills $
  */
 
 require('includes/application_top.php');
@@ -15,40 +15,10 @@ require('includes/application_top.php');
 ?>
 <!doctype html>
 <html <?php echo HTML_PARAMS; ?>>
-<head>
-<meta charset="<?php echo CHARSET; ?>">
-<title><?php echo TITLE; ?></title>
-<link rel="stylesheet" href="includes/stylesheet.css">
-<link rel="stylesheet" href="includes/cssjsmenuhover.css" media="all" id="hoverJS">
-<style>
-        html, body { 
-            margin: 0; 
-            padding: 0; 
-            height: 100%; 
-        }
-        iframe {
-            position: absolute;  
-            height: 100%;
-            width: 99%;
-            border: none;
-            box-sizing: border-box; 
-            -moz-box-sizing: border-box; 
-            -webkit-box-sizing: border-box;
-        }        
-</style>
-<script src="includes/menu.js"></script>
-<script src="includes/general.js"></script>
-<script>
-function init() {
-cssjsmenu('navbar');
-if (document.getElementById) {
-var kill = document.getElementById('hoverJS');
-kill.disabled = true;
-}
-}
-</script>
-</head>
-<body onload="init()">
+  <head>
+    <?php require DIR_WS_INCLUDES . 'admin_html_head.php'; ?>
+  </head>
+<body>
 <!-- header //-->
 <?php require(DIR_WS_INCLUDES . 'header.php'); ?>
 <!-- header_eof //-->

@@ -1,13 +1,13 @@
 <?php  
 /**
 * package Matomo
-* @copyright Copyright 2021-2023 webchills (www.webchills.at)
+* @copyright Copyright 2021-2024 webchills (www.webchills.at)
 * @based on piwikecommerce 2012 by Stephan Miller
 * @copyright Copyright 2003-2023 Zen Cart Development Team
 * Zen Cart German Version - www.zen-cart-pro.at
 * @copyright Portions Copyright 2003 osCommerce
 * @license https://www.zen-cart-pro.at/license/3_0.txt GNU General Public License V3.0
-* @version $Id: matomo.php 2023-11-14 18:50:40Z webchills $
+* @version $Id: matomo.php 2024-03-30 07:39:40Z webchills $
 */
 
 // checked OK
@@ -54,6 +54,7 @@ return $string;
 
 function log_order($insert_id,$order,$matomoproducts,$language_id = 0) {
 global $db,$order_summary;
+if (!empty($order_summary)) {
 $string = isset($string) ? $string : '';     
 if ($language_id == 0) $language_id = $_SESSION['languages_id']; 
 foreach ($matomoproducts as $p) {
@@ -86,6 +87,7 @@ $discount = 0.00;
 $string .= '_paq.push([\'trackEcommerceOrder\',\''.$insert_id.'\',\''.format_price($order_summary['order_total']).'\',\''.format_price($subtotal).'\',\''.format_price($order_summary['tax']).'\',\''.format_price($shipping).'\',\''.format_price($discount).'\']);' . "\n";
 return $string;	
 } 
+}
 
 function format_price($price) {      
 return number_format($price, 2, '.', '');
